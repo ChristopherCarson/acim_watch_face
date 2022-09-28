@@ -1,0 +1,7 @@
+require("Storage").write("acim.info",{
+  "id":"acim",
+  "name":"ACIM Face",
+  "type":"clock",
+  "src":"acim.app.js",
+  "icon":"acim.png"
+});
