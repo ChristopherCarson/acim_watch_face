@@ -128,7 +128,6 @@ Modules.addCached("time_utils",function(){// module "time_utils"
       const settings = require("sched").getSettings();
     
       function buzz() {
-        Bangle.setLocked(false);
         const pattern = alarm.vibrate || (alarm.timer ? settings.defaultTimerPattern : settings.defaultAlarmPattern);
         require("buzz").pattern(pattern).then(() => {
               if (!alarm.timer) {
@@ -141,7 +140,7 @@ Modules.addCached("time_utils",function(){// module "time_utils"
               if (!alarm.rp) {
                 alarm.on = false;
               }
-                         // The updated alarm is still a member of 'alarms'
+                // The updated alarm is still a member of 'alarms'
                 // so writing to array writes changes back directly
                 require("sched").setAlarms(alarms);
                 load();
